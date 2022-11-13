@@ -51,6 +51,10 @@ namespace ShopApi.Controllers
                 Amount = amount
             };
             paymentsList.Add(payment);
+            if(payment.PaymentMedium != "Cash" ^ payment.PaymentMedium != "Card" ^ payment.PaymentMedium != "Voucher")
+            {
+                return BadRequest("Payment medium must be one of: Cash, Card, Voucher");
+            }
             basket.Payments = paymentsList;
             return Ok(basket);
         }
@@ -87,7 +91,7 @@ namespace ShopApi.Controllers
             int totalPayment = 0;
             foreach(var item in basket.Items)
             {
-                totalPrice += item.Price;
+                totalPrice += item.Price * item.Quantity;
             }
             foreach(var payment in basket.Payments)
             {

@@ -45,10 +45,21 @@ namespace ShopApi.Controllers
             return item;
         }
 
+        // BUG DO NOT ALLOWS ADDING ITEM WITH REQUIRED PRODUCT GROUP MEDICINE
+        // BUG ALLOWS TO PASS QUANTITY = 0
         [HttpPost("CreateItem")]
         public ActionResult<List<ItemDto>> Create(ItemDto item)
         {
             items.Add(item);
+            if(item.ProductGroup != "Alcohol" ^ item.ProductGroup != "Tobbaco" ^ item.ProductGroup != "Food")
+            {
+                return BadRequest("Item is in not required product group: Alcohol, Tobbaco, Food, Medicine");
+            }
+
+            if (item.Price == 0)
+            {
+                return BadRequest("Item price cannot be 0");
+            }
             return Ok(items);
         }
 
