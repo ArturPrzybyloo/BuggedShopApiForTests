@@ -34,11 +34,11 @@ Sekcja Basket:
 
 
 # Modele
-Basket:
+- Basket:
 ![image](https://user-images.githubusercontent.com/46795587/201528599-35ac4083-ad91-4638-b957-6deae547e380.png)
-Customer:
+- Customer:
 ![image](https://user-images.githubusercontent.com/46795587/201528617-5c989d77-cbd0-4d1f-8b96-e5a177960563.png)
-Item:
+- Item:
 ![image](https://user-images.githubusercontent.com/46795587/201528636-902c8746-de07-48f9-8127-96ddc9bf5d41.png)
-Payment:
+- Payment:
 ![image](https://user-images.githubusercontent.com/46795587/201528645-0a78df60-f0a0-40d9-95e2-034c38cab128.png)
