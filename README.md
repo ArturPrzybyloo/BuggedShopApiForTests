@@ -2,38 +2,38 @@
 
 Dokumentacja:
 
-Sekcja Customer:
+Customer Section:
 ![image](https://user-images.githubusercontent.com/46795587/201528555-dba9fd6d-3848-4f00-a2db-b49e6d14066a.png)
 
-- /GetCustomers - służy do pobierania listy dodanych/istniejących klientów
-- /GetCustomer/{id} - służy do pobrania klienta o konkretnym id
-- /CreateCustomer - Służy do dodawania nowego klienta: pole dateOfBirth powinno być w formacie "YYYY-MM-DD"
-- /UpdateCustomer - Służy do aktualizacji danych customera
-- /DeleteCustomer - Służy do usuwania klienta o konkretnym id
+- /GetCustomers - Returns all added or existing customers
+- /GetCustomer/{id} - Returns client with specific ID
+- /CreateCustomer - Adds new customer : field dateOfBirth should be in format "YYYY-MM-DD"
+- /UpdateCustomer - Updates existing customer
+- /DeleteCustomer - Delete customer with specific ID
 
-Sekcja Item:
+Item Section:
 ![image](https://user-images.githubusercontent.com/46795587/201528568-dade3291-4fdd-4e9a-b788-2458fa61b040.png)
 
-- /GetItems - służy do pobierania listy dodanych/istniejących przedmiotów
-- /GetItem/{id} - służy do pobrania przedmiotu o konkretnym id
-- /CreateItem - Służy do dodawania nowego klienta: pole productGroup powinno do wyboru jedno z grup produktowych: "Alcohol, Tobbaco, Food, Medicine"
-- /UpdateItem - Służy do aktualizacji danych przedmiotu
-- /DeleteItem - Służy do usuwania przedmiotu o konkretnym id
+- /GetItems - Returns all added or existing items
+- /GetItem/{id} - Returns item with specific ID
+- /CreateItem - Adds new item: field productGroup should be one of product groups: "Alcohol, Tobbaco, Food, Medicine"
+- /UpdateItem - Updates existing item
+- /DeleteItem - Delete item with specific ID
 
-Sekcja Basket:
+Basket Section:
 ![image](https://user-images.githubusercontent.com/46795587/201528540-53bc0e5f-9f57-491f-a860-faec71c98097.png)
 
-- /GetBasketDetails - zwraca aktualną zawartość koszyka (customer,item,payment)
-- /AddCustomer - dodaje klienta do koszyka
-- /AddItem - dodaje przedmiotu o konkretnym ID do koszyka - można dodać wiele przedmiotów
-- /AddPayment - dodaje płatność do koszyka: pole paymentMedium musi być jedną z wartości: "Cash, Card, Voucher". Można dodać wiele płatności.
-- /ValidateBasket: sprawdza poprawność zawartości koszyka:
-   - wymagane pola: Customer, Items, Payments
-   - czy suma płatności odpowiada cenie wszystkich kupowanych przedmiotów
-   - w przypadku kupowania produktów z grup: "Alcohol, Tobacco" weryfikowany jest wiek klienta
+- /GetBasketDetails - Returns actual content of basket (customer, items, payments)
+- /AddCustomer - Adds customer to basket content
+- /AddItem - Adds item to basket content - possible to add multiple items
+- /AddPayment - Adds payment to basket content: field paymentMedium must be one of: "Cash, Card, Voucher". Possible to add multiple payments.
+- /ValidateBasket: checks corectness of basket content:
+   - Required fields: Customer, Items, Payments
+   - If sum of payments is equal to sum of Item prices
+   - If item with product group: Alcohol or Tobaaco, checks if customer is 18 years old
 
 
-# Modele
+# Models
 - Basket:
 ![image](https://user-images.githubusercontent.com/46795587/201528599-35ac4083-ad91-4638-b957-6deae547e380.png)
 - Customer:
